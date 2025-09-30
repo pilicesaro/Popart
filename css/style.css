@@ -6,9 +6,9 @@ body {
     overflow-x: hidden; 
     line-height: 1.8;
 }
-/* Interlineado para elementos de texto */
+
 p, h1, h2, h3, ul, li {
-    line-height: 1.8; /* Espaciado consistente entre líneas */
+    line-height: 1.8; 
 }
 
 .container {
@@ -62,11 +62,63 @@ header nav ul li a:hover {
     margin: 0 auto; 
     padding: 10px; 
     width: fit-content;
+    width: fit-content; /* Ajusta el ancho al contenido */
+    display: flex; /* Para alinear logo y viñetas */
+    align-items: center; /* Centra verticalmente */
+    gap: 30px; /* Espacio entre elementos */
 }
 
 .logo-container img {
     height: 150px; 
     width: auto; 
+}
+
+.speech-bubble {
+    font-family: 'Bangers', cursive;
+    background-color: #ffffff; /* Amarillo Pop */
+    color: #000; /* Hacemos el texto visible */
+    padding: 15px 20px; /* Añadimos padding para el texto */
+    border: 3px solid #000;
+    border-radius: 40px; /* Bordes redondeados para un estilo comic */
+    position: relative;
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.3);
+    font-size: 18px; /* Tamaño de la fuente */
+    text-align: center;
+    min-width: 150px; /* Ancho mínimo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Triángulo para la viñeta */
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    display: block;
+    width: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.left-bubble::after {
+    content: '';
+    border: 20px solid transparent;
+    border-left-color: #000;
+    border-right: 0;
+    top: 50%;
+    right: -18px;
+    transform: translateY(-50%);
+}
+
+.right-bubble::after {
+    content: '';
+    border: 20px solid transparent;
+    border-right-color: #000;
+    border-left: 0;
+    top: 50%;
+    left: -18px;
+    transform: translateY(-50%);
 }
 
 
@@ -158,7 +210,7 @@ nav ul li a:hover {
 .intro-text {
     background-color: #fff;
     padding: 40px 20px;
-    text-align: center;
+    text-align: left;
     border-bottom: 5px solid #000; 
 }
 
@@ -278,7 +330,7 @@ nav ul li a:hover {
 
 .relevant-info {
     padding: 40px 20px;
-    text-align: center;
+    text-align: left;
     border-top: 5px solid #000;
     border-bottom: 5px solid #000; 
     max-width: 1200px; 
@@ -416,6 +468,7 @@ nav ul li a:hover {
     justify-content: center;
     gap: 10px;
     position: relative;
+    text-align: left;
 }
 
 .carousel-images {
@@ -754,7 +807,7 @@ footer {
     font-size: 18px;
     color: #444;
     line-height: 1.7;
-    text-align: justify;
+    text-align: left;
     margin: 0;
 }
 
@@ -1442,6 +1495,7 @@ footer {
     padding: 20px;
     transform: translateY(100%);
     transition: transform 0.4s ease-in-out;
+    text-align: left;
 }
 
 .featured-work-item.active .featured-work-info {
